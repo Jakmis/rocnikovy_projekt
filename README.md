@@ -1,5 +1,5 @@
 # Ročníkový projekt
-  Zobrazení teřce a zásahu na obrazovce. Jako HW se využivá SETA Targeting terče.
+  Zobrazení teřce a zásahu na obrazovce. Jako HW se využivá [SETA Target](https://www.seta-online.com/en-gb) terče.
 ### Webová aplikace využívající framework [Angular](https://angular.io/)/[Django](https://www.djangoproject.com/)
 
 ### To do:
