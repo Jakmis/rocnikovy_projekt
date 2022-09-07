@@ -1,6 +1,6 @@
 # Ročníkový projekt
   Zobrazení teřce a zásahu na obrazovce. Jako HW se využivá SETA Targeting terče.
-### Webová aplikace využívající framework Angular/Django
+### Webová aplikace využívající framework [Angular](https://angular.io/)/[Django](https://www.djangoproject.com/)
 
 ### To do:
   - zjistit propojení HW s SW
