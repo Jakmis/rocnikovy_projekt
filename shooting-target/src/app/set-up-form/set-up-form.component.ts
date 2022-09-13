@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-set-up-form',
@@ -8,14 +7,7 @@ import { FormBuilder } from '@angular/forms';
 })
 export class SetUpFormComponent implements OnInit {
 
-  form = this.formBuilder.group({
-    name: '',
-    email: '',
-  });
-
-  constructor(
-    private formBuilder: FormBuilder,
-  ) { }
+  constructor() { }
 
   onSubmit(): void {
     console.warn(('Success'));
