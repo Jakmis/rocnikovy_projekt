@@ -8,3 +8,13 @@
   - vytvořit zobrazení terče podle parametrů z formuláře
   - vytvořit výsledek po ukončení tréninku/soutěže
   - zdokrovat aplikaci
+
+## Docker:
+  ### Build Docker Image
+    ```
+    docker build -t test .
+    ```
+  ### Run Docker Container
+    ```
+    docker run -d -p 80:80 test:latest
+    ```
