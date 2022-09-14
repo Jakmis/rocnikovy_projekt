@@ -17,3 +17,5 @@
   ### Run Docker Container
    
     docker run -d -p 80:80 test:latest
+
+    http://localhost:80
