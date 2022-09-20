@@ -7,7 +7,11 @@
   - vytvořit formulář na zadání parametrů uživatele
   - vytvořit zobrazení terče podle parametrů z formuláře
   - vytvořit výsledek po ukončení tréninku/soutěže
-  - zdokrovat aplikaci
+  - zdokrovat aplikaci:
+    - Vylepšit pomocí Docker Compose
+    - Automatizovat pomoci [ArgoCD](https://argo-cd.readthedocs.io/en/stable/)
+  - Možné implementace:
+    - [Redis](https://redis.io/)
 
 ## Docker:
   ### Build Docker Image
