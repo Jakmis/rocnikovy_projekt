@@ -12,6 +12,7 @@
     - Automatizovat pomoci [ArgoCD](https://argo-cd.readthedocs.io/en/stable/)
   - Možné implementace:
     - [Redis](https://redis.io/)
+    - [Kubernetes](https://kubernetes.io/)
 
 ## Docker:
   ### Build Docker Image
