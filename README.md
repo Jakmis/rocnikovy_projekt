@@ -16,6 +16,6 @@
 
 ## Docker Compose:
   ### Docker Compose Run
-    docker compose run
+    docker compose up
     
     localhost:4200
