@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 
 
@@ -11,10 +11,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class SetUpFormComponent implements OnInit {
 
   setUpForm: FormGroup;
-  
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+
     this.setUpForm = this.fb.group({
       name: '',
       range: '',
