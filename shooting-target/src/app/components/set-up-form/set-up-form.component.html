@@ -1,1 +1,10 @@
-<p>Hello World!</p>
+<form [formGroup]="setUpForm">
+    Value: {{ setUpForm.value | json }}
+
+    <hr>
+
+    <mat-form-field>
+        <input matInput placeholder="Jméno" formControlName="name">
+    </mat-form-field>
+
+</form>

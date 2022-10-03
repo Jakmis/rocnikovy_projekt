@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-set-up-form',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SetUpFormComponent implements OnInit {
 
-  constructor() { }
+  setUpForm: FormGroup;
   
-  ngOnInit(): void {
-  }
+  constructor(private fb: FormBuilder) { }
 
+  ngOnInit(): void {
+    this.setUpForm = this.fb.group({
+      name: '',
+      range: '',
+      discipline: ''
+    })
+    this.setUpForm.valueChanges.subscribe(console.log)
+  }
 }
