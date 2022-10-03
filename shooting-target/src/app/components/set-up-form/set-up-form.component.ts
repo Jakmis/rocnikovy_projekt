@@ -8,11 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SetUpFormComponent implements OnInit {
 
   constructor() { }
-
-  onSubmit(): void {
-    console.warn(('Success'));
-  }
-
+  
   ngOnInit(): void {
   }
 
