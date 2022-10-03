@@ -8,19 +8,14 @@
   - vytvořit zobrazení terče podle parametrů z formuláře
   - vytvořit výsledek po ukončení tréninku/soutěže
   - zdokrovat aplikaci:
-    - Vylepšit pomocí Docker Compose
+    - Vylepšit pomocí Docker Compose ✓
     - Automatizovat pomoci [ArgoCD](https://argo-cd.readthedocs.io/en/stable/)
   - Možné implementace:
     - [Redis](https://redis.io/)
     - [Kubernetes](https://kubernetes.io/)
 
-## Docker:
-  ### Build Docker Image
+## Docker Compose:
+  ### Docker Compose Run
+    docker compose up
     
-    docker build -t test .
-   
-  ### Run Docker Container
-   
-    docker run -d -p 80:80 test:latest
-
-    http://localhost:80
+    localhost:4200
