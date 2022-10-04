@@ -4,6 +4,7 @@
 
 ### To do:
   - zjistit propojení [HW](https://web.dev/serial/) s SW
+    - [Serial Port Monitor](https://www.com-port-monitoring.com/)
   - vytvořit formulář na zadání parametrů uživatele
   - vytvořit zobrazení terče podle parametrů z formuláře
   - vytvořit výsledek po ukončení tréninku/soutěže
