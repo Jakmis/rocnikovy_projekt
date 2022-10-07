@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
+interface Discipline{
+  value: string;
+  viewValue: string;
+}
 
 
 @Component({
@@ -9,8 +13,13 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./set-up-form.component.css']
 })
 export class SetUpFormComponent implements OnInit {
-
   setUpForm: FormGroup;
+  disciplinesTenMeters: Discipline[] = [
+    {value: '30', viewValue: 'VzPu30'},
+    {value: '40', viewValue: 'VzPu40'},
+    {value: '60', viewValue: 'VzPu60'},
+  ]
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -18,7 +27,7 @@ export class SetUpFormComponent implements OnInit {
     this.setUpForm = this.fb.group({
       name: '',
       range: '',
-      discipline: ''
+      disciplines: this.disciplinesTenMeters
     })
     this.setUpForm.valueChanges.subscribe(console.log)
   }

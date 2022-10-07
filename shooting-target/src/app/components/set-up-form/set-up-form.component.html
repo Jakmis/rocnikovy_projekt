@@ -6,8 +6,18 @@
     <mat-form-field>
         <input matInput placeholder="Jméno" formControlName="name">
     </mat-form-field>
-    <!--<mat-radio-group>
-        <mat-radio-button formControlName="range">10</mat-radio-button>
-        <mat-radio-button formControlName="range">50</mat-radio-button>
-    </mat-radio-group>-->
+    <h4>Vzdálenost</h4>
+    <input type="radio" formControlName="range" value="10">
+    <label for="10">10</label>
+    <input type="radio" formControlName="range" value="50">
+    <label for="50">50</label>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Disciplína</mat-label>
+        <select formControlName="disciplines">
+            <option *ngFor="let disciplinesTenMeter of disciplinesTenMeters" [value]="disciplinesTenMeter.value">
+                {{disciplinesTenMeter.viewValue}}
+            </option>
+        </select>
+    </mat-form-field>
 </form>

@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { AppComponent } from './app.component';
 import { SetUpFormComponent } from './components/set-up-form/set-up-form.component';
+import { MatOptionModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SetUpFormComponent } from './components/set-up-form/set-up-form.compone
     MatFormFieldModule,
     MatInputModule,
     MatRadioModule,
+    MatOptionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
