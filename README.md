@@ -6,6 +6,7 @@
   - zjistit propojení [HW](https://web.dev/serial/) s SW
     - [Serial Port Monitor](https://www.com-port-monitoring.com/)
     - [Ngx serial](https://www.npmjs.com/package/ngx-serial)
+    - [How to acces Serial Device](https://www.losant.com/blog/how-to-access-serial-devices-in-docker)
   - vytvořit formulář na zadání parametrů uživatele
   - vytvořit zobrazení terče podle parametrů z formuláře
   - vytvořit výsledek po ukončení tréninku/soutěže
