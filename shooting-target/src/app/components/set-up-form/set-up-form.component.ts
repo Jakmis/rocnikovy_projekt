@@ -18,6 +18,7 @@ export class SetUpFormComponent implements OnInit {
     {value: '30', viewValue: 'VzPu30'},
     {value: '40', viewValue: 'VzPu40'},
     {value: '60', viewValue: 'VzPu60'},
+    {value: '100', viewValue: VzPu100},
   ]
 
   constructor(private fb: FormBuilder) { }
