@@ -8,6 +8,7 @@
     - [Serial Port Package](https://serialport.io/)
     - [How to acces Serial Device](https://www.losant.com/blog/how-to-access-serial-devices-in-docker)
   - vytvořit formulář na zadání parametrů uživatele
+    - [Template-Driven Form](https://timdeschryver.dev/blog/a-practical-guide-to-angular-template-driven-forms) 
   - vytvořit zobrazení terče podle parametrů z formuláře
   - vytvořit výsledek po ukončení tréninku/soutěže
   - zdokrovat aplikaci:
