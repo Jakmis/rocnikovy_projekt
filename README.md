@@ -7,6 +7,7 @@
     - [Serial Port Monitor](https://www.com-port-monitoring.com/)
     - [Serial Port Package](https://serialport.io/)
     - [How to acces Serial Device](https://www.losant.com/blog/how-to-access-serial-devices-in-docker)
+    - [RS485 Sniffer](http://jheyman.github.io/blog/pages/RS485Sniffer/)
   - vytvořit formulář na zadání parametrů uživatele
     - [Template-Driven Form](https://timdeschryver.dev/blog/a-practical-guide-to-angular-template-driven-forms) 
   - vytvořit zobrazení terče podle parametrů z formuláře
