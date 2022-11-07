@@ -1,6 +1,7 @@
 # Ročníkový projekt
   Zobrazení teřce a zásahu na obrazovce. Jako HW se využivá [SETA Target](https://www.seta-online.com/en-gb) terče.
-### Webová aplikace využívající framework [Angular](https://angular.io/)
+### Webová aplikace využívající framework Django
+   webová stránka s prihlášením a databází střelců a soutěží
 
 ### To do:
   - zjistit propojení [HW](https://web.dev/serial/) s SW
