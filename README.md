@@ -26,3 +26,10 @@
     docker compose up
     
     localhost:4200
+
+## Flask AppBuilder 
+    cd crud_rest_api/
+    
+    $ export FLASK_APP=app/__init__.py
+    $ flask fab create-admin
+    $ flask run
