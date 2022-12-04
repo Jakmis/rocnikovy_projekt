@@ -14,6 +14,8 @@
 - CSS
 
 ## Spuštění:
+  ### Instalace:
+    npm install
   ### Development
     npm run dev
   ### Production
