@@ -1,10 +1,9 @@
-html,
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+html
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #C9F0FF !important;
+  background: #EAFFFD;
+  color: #333;
+  font-family: "Nunito";
 }
 
 a {
@@ -25,6 +24,29 @@ a {
     background: black;
   }
 }
+@media (prefers-color-scheme: light){
+  html {
+    color-scheme: light;
+  }
+  body {
+    color: black;
+    background: white;
+  }
+}
 Button{
   background-color: #FFBF69 !important;
+}
+
+footer {
+  display: block;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 60px;
+  color: #777;
+  border-top: 1px solid #eaeaea;
+}
+.not-found{
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 450px;
 }

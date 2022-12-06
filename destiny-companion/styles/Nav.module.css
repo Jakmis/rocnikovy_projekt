@@ -1,0 +1,11 @@
+.navbar{
+    background-color: #FFBF69 !important;
+}
+
+.link:hover,
+.link:focus,
+.link:active,
+.link{
+    text-decoration: none;
+    color: black;
+}

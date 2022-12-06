@@ -108,6 +108,14 @@
   margin-left: 0.5rem;
 }
 
+.link:hover,
+.link:focus,
+.link:active,
+.link{
+    text-decoration: none;
+    color: black;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
