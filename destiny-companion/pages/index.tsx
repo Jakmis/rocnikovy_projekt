@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Button, Container, Stack } from 'react-bootstrap'
 import styles from '../styles/Home.module.css'
 
@@ -27,14 +28,11 @@ export default function Home() {
           <Stack gap={2} className="col-md-5 mx-auto">
             <Button size='lg' variant=''>Login through Bungie.net</Button>
             <h4 className='m-3'>or</h4>
-            <Button size='lg' variant=''>Browse Destiny 2 Database</Button>
+            <Link href="/data" className={styles.link}><Button size='lg' variant=''>Browse Destiny 2 Database</Button></Link>
           </Stack>
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        <p>Copyright &copy; Jakub Hudymač - 2022</p>
-      </footer>
     </Container>
   )
 }
