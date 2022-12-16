@@ -21,11 +21,11 @@ export default function CustomNavbar(){
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/" className="active">Homepage</Nav.Link>
-              <Nav.Link href="#" className="active">Disabled link</Nav.Link>
+              <Nav.Item><Link href="/" className={styles.link}>Home</Link></Nav.Item>
+              <Nav.Item><Link href="/data" className={styles.link}>Data</Link></Nav.Item>
             </Nav>
             <Nav>
-              <Nav.Link href="#" className="active">Login</Nav.Link>
+            <Nav.Item><Link href="#" className={styles.link}>Login</Link></Nav.Item>
             </Nav>
             </Navbar.Collapse>
           </Container>

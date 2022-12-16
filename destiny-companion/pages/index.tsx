@@ -32,7 +32,6 @@ export default function Home() {
           </Stack>
         </div>
       </main>
-
     </Container>
   )
 }
