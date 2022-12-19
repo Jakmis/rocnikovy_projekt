@@ -41,7 +41,7 @@ export async function getServerSideProps(context: any) {
 
     const f = await fetch(`https://www.bungie.net/Platform/User/GetMembershipsById/${getCurrentBungieNetUserData.Response.membershipId}/3/`, {
       headers: {
-        'X-API-Key': "f4725a5aa4504b93a1fd4b8a89aa536e",
+        'X-API-Key': `${apiKey}`,
         'Authorization': `Bearer ${key["access_token"]}`
       }
     })
@@ -59,7 +59,7 @@ export async function getServerSideProps(context: any) {
       {
         method: "GET",
         headers: {
-          "X-API-KEY": "f4725a5aa4504b93a1fd4b8a89aa536e",
+          "X-API-KEY": `${apiKey}`,
           "Content-type": "application/json",
         },
       }
