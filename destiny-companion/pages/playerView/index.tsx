@@ -1,3 +1,6 @@
+const clientId = process.env.CLIENT_ID;
+const clientSecret = process.env.CLIENT_SECRET;
+
 export default function Page({ data, withApiKey }: any) {
   console.log(data);
   // const [auth, setAuth] = useState<string | null>(null)
@@ -93,10 +96,9 @@ async function loginAndGetAccess() {
   //   }
   // });
 }
+
     
 async function fetchData(authCode: string) {
-  const clientId = process.env.CLIENT_ID;
-  const clientSecret = process.env.CLIENT_SECRET;
 
   try {
     const response = await fetch(
@@ -127,7 +129,7 @@ function base64encoded(str: string) {
 }
 
 function Login() {
-  const authorizeUrl = "https://www.bungie.net/en/OAuth/Authorize?client_id=42178&response_type=code";
+  const authorizeUrl = `https://www.bungie.net/en/OAuth/Authorize?client_id=${clientId}&response_type=code`;
 
   localStorage.setItem("tabbed", "true");
   window.open(authorizeUrl);
