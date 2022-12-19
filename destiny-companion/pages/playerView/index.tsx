@@ -1,7 +1,7 @@
 const clientId = process.env.CLIENT_ID;
 const clientSecret = process.env.CLIENT_SECRET;
 
-export default function Page({ data, withApiKey }: any) {
+export default function Page({ data, withApiKey }: any, clientId:string) {
   console.log(data);
   // const [auth, setAuth] = useState<string | null>(null)
 
@@ -9,7 +9,7 @@ export default function Page({ data, withApiKey }: any) {
 
   return (
     <div>
-      <Button onClick={() => loginAndGetAccess()}></Button>
+      <Button onClick={() => loginAndGetAccess(clientId)}></Button>
       {withApiKey ? <p>api data in</p> : <p>showing default data only</p>}
     </div>
   );
@@ -76,25 +76,8 @@ export async function getServerSideProps(context: any) {
 import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 
-async function loginAndGetAccess() {
-
-
-  Login();
-  // window.addEventListener("storage", function (e) {
-  //   if (localStorage.getItem("tabbed") && localStorage.getItem("tabbed")) {
-  //     // Reload authorization code from LocalStorage
-  //     localStorage.removeItem("tabbed");
-  //     const queryString = window.location.search;
-  //     const urlParams = new URLSearchParams(queryString);
-  //     const authCode = urlParams.get("code")
-  //     console.log(authCode);
-
-  //     if (authCode != null) {
-  //       // console.log(authCode);
-  //     } else
-  //       console.log("error");
-  //   }
-  // });
+async function loginAndGetAccess(clientId:string) {
+  Login(clientId);
 }
 
     
@@ -107,7 +90,7 @@ async function fetchData(authCode: string) {
         method: "POST",
         headers: {
           Authorization:
-            "Basic " + base64encoded(`${clientId}:${clientSecret}`),
+          "Basic " + base64encoded(`${clientId}:${clientSecret}`),
           "Content-Type": "application/x-www-form-urlencoded",
         },
         body: 'grant_type=authorization_code&code=' + authCode
@@ -125,10 +108,10 @@ async function fetchData(authCode: string) {
 }
 
 function base64encoded(str: string) {
-  return btoa(str);
+  return Buffer.from(str, 'base64');
 }
 
-function Login() {
+function Login(clientId: string) {
   const authorizeUrl = `https://www.bungie.net/en/OAuth/Authorize?client_id=${clientId}&response_type=code`;
 
   localStorage.setItem("tabbed", "true");
