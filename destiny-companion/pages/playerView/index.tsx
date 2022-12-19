@@ -15,6 +15,7 @@ export default function Page({ data, withApiKey }: any) {
 
 
 export async function getServerSideProps(context: any) {
+  const apiKey = process.env.API_KEY;
   console.log(context.query)
   // Fetch data from external API
 
@@ -26,7 +27,7 @@ export async function getServerSideProps(context: any) {
 
     const getCurrentBungieNetUserFetch = await fetch('https://www.bungie.net/Platform/User/GetCurrentBungieNetUser/', {
       headers: {
-        'X-API-Key': "f4725a5aa4504b93a1fd4b8a89aa536e",
+        'X-API-Key': `${apiKey}`,
         'Authorization': `Bearer ${key["access_token"]}`
       }
     })
@@ -94,8 +95,8 @@ async function loginAndGetAccess() {
 }
     
 async function fetchData(authCode: string) {
-  const clientId = "42178";
-  const clientSecret = "SEpgibsxPCfBxxNWL1KnmS3ILSkxUVHocm6693aW.30";
+  const clientId = process.env.CLIENT_ID;
+  const clientSecret = process.env.CLIENT_SECRET;
 
   try {
     const response = await fetch(
