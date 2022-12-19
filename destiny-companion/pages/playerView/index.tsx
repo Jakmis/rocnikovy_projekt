@@ -22,7 +22,6 @@ export async function getServerSideProps(context: any) {
 
   if (context.query.code && context.query.code.length > 0) {
     const key = await fetchData(context.query.code)
-    console.log("xddddddddd", key["access_token"])
 
     // pokud máme access token
 
@@ -107,7 +106,7 @@ async function fetchData(authCode: string) {
 }
 
 function base64encoded(str: string) {
-  return Buffer.from(str, 'base64');
+  return Buffer.from(str).toString('base64');
 }
 
 function Login() {
