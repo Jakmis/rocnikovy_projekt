@@ -1,15 +1,13 @@
-const clientId = process.env.CLIENT_ID;
-const clientSecret = process.env.CLIENT_SECRET;
-
-export default function Page({ data, withApiKey }: any, clientId:string) {
+export default function Page({ data, withApiKey }: any) {
   console.log(data);
+
   // const [auth, setAuth] = useState<string | null>(null)
 
 
 
   return (
     <div>
-      <Button onClick={() => loginAndGetAccess(clientId)}></Button>
+      <Button onClick={() => loginAndGetAccess()}>Login</Button>
       {withApiKey ? <p>api data in</p> : <p>showing default data only</p>}
     </div>
   );
@@ -18,7 +16,7 @@ export default function Page({ data, withApiKey }: any, clientId:string) {
 
 
 export async function getServerSideProps(context: any) {
-  const apiKey = process.env.API_KEY;
+  const apiKey = process.env.NEXT_PUBLIC_API_KEY;
   console.log(context.query)
   // Fetch data from external API
 
@@ -76,13 +74,14 @@ export async function getServerSideProps(context: any) {
 import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 
-async function loginAndGetAccess(clientId:string) {
-  Login(clientId);
+async function loginAndGetAccess() {
+  Login();
 }
 
     
 async function fetchData(authCode: string) {
-
+    const clientId = process.env.NEXT_PUBLIC_CLIENT_ID;
+    const clientSecret = process.env.NEXT_PUBLIC_CLIENT_SECRET;
   try {
     const response = await fetch(
       "https://www.bungie.net/Platform/App/OAuth/Token/",
@@ -111,7 +110,8 @@ function base64encoded(str: string) {
   return Buffer.from(str, 'base64');
 }
 
-function Login(clientId: string) {
+function Login() {
+  const clientId = process.env.NEXT_PUBLIC_CLIENT_ID;
   const authorizeUrl = `https://www.bungie.net/en/OAuth/Authorize?client_id=${clientId}&response_type=code`;
 
   localStorage.setItem("tabbed", "true");
