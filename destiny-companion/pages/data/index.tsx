@@ -38,22 +38,23 @@ import { getDestinyManifest, getDestinyManifestSlice, HttpClientConfig } from "b
 export async function getStaticProps(config: HttpClientConfig) {
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
-  const f = await fetch("https://www.bungie.net/Platform/Destiny2/Manifest/", {
+  const getManifest = await fetch("https://www.bungie.net/Platform/Destiny2/Manifest/", {
     method: "GET",
     headers: {
       "X-API-KEY": `${apiKey}`,
       "Content-type": "application/json",
     },
  });
-  const data = await f.json();
-
-  const f2 = await fetch("https://www.bungie.net/common/destiny2_content/json/en/aggregate-ed55fd73-3627-4784-9026-96aae1a7b82f.json", {
+  const data = await getManifest.json();
+  console.log("manifest:", data);
+  const f2 = await fetch(`https://www.bungie.net/common/destiny2_content/json/en/aggregate-ed55fd73-3627-4784-9026-96aae1a7b82f.json`, {
         method: "GET",
         headers: {
           //"X-API-KEY": `${apiKey}`, //není třeba apiKey
           "Content-type": "application/json",
         },
     })
+  // /common/destiny2_content/json/en/aggregate-ed55fd73-3627-4784-9026-96aae1a7b82f.json
   //const data = (await f2.json())
   // .map((elem) => {
   //     elem.displayProperties.icon = null
