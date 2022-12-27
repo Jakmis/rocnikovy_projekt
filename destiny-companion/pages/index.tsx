@@ -26,7 +26,7 @@ export default function Home() {
 
         <div className="d-flex justify-content-center">
           <Stack gap={2} className="col-md-5 mx-auto">
-            <Button size='lg' variant=''>Login through Bungie.net</Button>
+            <Link href="/playerView" className={styles.link}><Button size='lg' variant=''>Login through Bungie.net</Button></Link>
             <h4 className='m-3'>or</h4>
             <Link href="/data" className={styles.link}><Button size='lg' variant=''>Browse Destiny 2 Database</Button></Link>
           </Stack>

@@ -70,10 +70,9 @@ export async function getServerSideProps(context: any) {
   }
 }
 
-import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 
-async function loginAndGetAccess() {
+export async function loginAndGetAccess() {
   Login();
 }
 

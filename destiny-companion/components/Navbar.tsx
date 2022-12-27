@@ -25,7 +25,7 @@ export default function CustomNavbar(){
               <Nav.Item><Link href="/data" className={styles.link}>Data</Link></Nav.Item>
             </Nav>
             <Nav>
-            <Nav.Item><Link href="#" className={styles.link}>Login</Link></Nav.Item>
+            <Nav.Item><Link href="/playerView" className={styles.link}>Login</Link></Nav.Item>
             </Nav>
             </Navbar.Collapse>
           </Container>
