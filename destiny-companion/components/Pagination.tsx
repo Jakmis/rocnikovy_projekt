@@ -16,7 +16,7 @@ export default function PaginationCustom({
   }
 
   return (
-    <div>
+    <div className="container">
       <Pagination size="sm">{pageNumber}</Pagination>
     </div>
   );
