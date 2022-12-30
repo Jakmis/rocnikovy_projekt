@@ -7,7 +7,6 @@ export default function Item({ data }:any) {
   const response = data.itemData.Response
   const name = response.displayProperties.name
   const icon = response.displayProperties.icon
-  const iconWaterMark = response.quality.displayVersionWatermarkIcons
   const secondaryIcon = response.secondaryIcon
   const screenshot = response.screenshot
   const tierTypeName = response.inventory.tierTypeName
