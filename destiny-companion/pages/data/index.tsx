@@ -34,22 +34,23 @@ export default function Data({ jsonData }: any) {
         <div className="container">
           <div className="row mt-4">
           {currentItems.map((elem: any, i: number) => (
-              
                 <div className="col-md-4" key={i}>
-                      <div className="card mb-3 text-bg-dark ">
-                      <div className="card-header">{elem.itemTypeDisplayName == "" ? "Misc." : elem.itemTypeDisplayName}</div>
+                    <Link href={/data/ + elem.hash} style={{ textDecoration: "none"}}>  
+                    <div className="card mb-3 text-bg-dark h-90">
+                      <div className="card-header">{elem.itemTypeDisplayName == "" ? "Misc." : elem.itemTypeDisplayName} | {elem.hash}</div>
                         <div className="row">
                           <div className="col-md-2">
-                          <Image src={elem.icon === null ? "https://placehold.co/90":`https://www.bungie.net${elem.icon}`}  width={90} height={90} alt={elem.name}></Image>
+                          <Image src={elem.icon === null ? "https://placehold.co/90?text=?&font=nunito":`https://www.bungie.net${elem.icon}`} width={90} height={90} alt={elem.name}></Image>
                           </div>
                           <div className="col-md-10">
                             <div className="card-body ms-5">
-                              <h5 className="card-title">{elem.name}</h5>
-                              <h6 className="card-subtitle mb-2">{elem.itemTypeAndTierDisplayName}</h6>
+                              <h6 className="card-title text-truncate">{elem.name}</h6>
+                              <h6 className="card-subtitle mb-2 text-muted text-truncate">{elem.itemTypeAndTierDisplayName}</h6>
                             </div>
                           </div>
                         </div>
                       </div>
+                      </Link>
                   </div>
           ))}
           </div>
@@ -77,7 +78,6 @@ export async function getStaticProps() {
     }
   );
   const data = await getManifest.json();
-  console.log("manifest:", data.Response.jsonWorldContentPaths.en);
 
   const f2 = await fetch(
     `https://www.bungie.net${data.Response.jsonWorldContentPaths.en}`,

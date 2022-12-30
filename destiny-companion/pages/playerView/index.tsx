@@ -1,9 +1,6 @@
 export default function Page({ data, withApiKey }: any) {
   console.log(data);
 
-  // const [auth, setAuth] = useState<string | null>(null)
-
-
 
   return (
     <div>
@@ -112,7 +109,6 @@ function Login() {
   const clientId = process.env.NEXT_PUBLIC_CLIENT_ID;
   const authorizeUrl = `https://www.bungie.net/en/OAuth/Authorize?client_id=${clientId}&response_type=code`;
 
-  localStorage.setItem("tabbed", "true");
-  window.open(authorizeUrl);
+  window.open(authorizeUrl, "_self");
 
 }
