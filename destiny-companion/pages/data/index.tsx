@@ -15,7 +15,7 @@ interface ItemData {
 
 export default function Data({ jsonData }: any) {
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemPerPage] = useState(500);
+  const [itemPerPage] = useState(50);
 
   const indexOfLastItem = currentPage * itemPerPage;
   const indexOfFirstItem = indexOfLastItem - itemPerPage;
@@ -98,7 +98,7 @@ export async function getStaticProps() {
   );
   const dataArr = [];
   const itemIds = Object.keys(jsonData.DestinyInventoryItemDefinition);
-  for (let i = 0; i < itemIds.length; i++) {
+  for (let i = 0; i < 500; i++) {
     const elem = jsonData.DestinyInventoryItemDefinition[itemIds[i]];
     if (
       elem.displayProperties.name.length > 0 &&
