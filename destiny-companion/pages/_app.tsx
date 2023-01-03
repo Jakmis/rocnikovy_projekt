@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@etchteam/next-pagination/dist/index.css'
 import Layout from '../components/Layout';
 import Router from 'next/router';
 import NProgress from 'nprogress'; //nprogress module

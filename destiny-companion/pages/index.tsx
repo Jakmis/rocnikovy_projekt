@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Button, Container, Stack } from 'react-bootstrap'
 import styles from '../styles/Home.module.css'
+import { loginAndGetAccess } from './playerView'
 
 
 export default function Home() {
@@ -26,7 +27,7 @@ export default function Home() {
 
         <div className="d-flex justify-content-center">
           <Stack gap={2} className="col-md-5 mx-auto">
-            <Link href="/playerView" className={styles.link}><Button size='lg' variant=''>Login through Bungie.net</Button></Link>
+            <Button size='lg' variant='' onClick={loginAndGetAccess}>Login through Bungie.net</Button>
             <h4 className='m-3'>or</h4>
             <Link href="/data" className={styles.link}><Button size='lg' variant=''>Browse Destiny 2 Database</Button></Link>
           </Stack>
