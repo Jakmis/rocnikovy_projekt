@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import Image from "next/image";
 import PaginationCustom from "../../components/Pagination";
 import Link from "next/link";
@@ -31,43 +30,63 @@ export default function Data({ jsonData }: any) {
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-        <div className="container">
-          <div className="row mt-4">
+      <div className="container">
+        <div className="row mt-4">
           {currentItems.map((elem: any, i: number) => (
-                <div className="col-md-4" key={i}>
-                    <Link href={/data/ + elem.hash} style={{ textDecoration: "none"}}>  
-                    <div className="card mb-3 text-bg-dark h-90">
-                      <div className="card-header">{elem.itemTypeDisplayName == "" ? "Misc." : elem.itemTypeDisplayName} | {elem.hash}</div>
-                        <div className="row">
-                          <div className="col-md-2">
-                          <Image src={elem.icon === null ? "https://placehold.co/90?text=?&font=nunito":`https://www.bungie.net${elem.icon}`} width={90} height={90} alt={elem.name}></Image>
-                          </div>
-                          <div className="col-md-10">
-                            <div className="card-body ms-5">
-                              <h6 className="card-title text-truncate">{elem.name}</h6>
-                              <h6 className="card-subtitle mb-2 text-muted text-truncate">{elem.itemTypeAndTierDisplayName}</h6>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      </Link>
+            <div className="col-md-4" key={i}>
+              <Link
+                href={/data/ + elem.hash}
+                style={{ textDecoration: "none" }}
+              >
+                <div className="card mb-3 text-bg-dark h-90">
+                  <div className="card-header">
+                    {elem.itemTypeDisplayName == ""
+                      ? "Misc."
+                      : elem.itemTypeDisplayName}{" "}
+                    | {elem.hash}
                   </div>
+                  <div className="row">
+                    <div className="col-md-2">
+                      <Image
+                        src={
+                          elem.icon === null
+                            ? "https://placehold.co/90?text=?&font=nunito"
+                            : `https://www.bungie.net${elem.icon}`
+                        }
+                        width={90}
+                        height={90}
+                        alt={elem.name}
+                      ></Image>
+                    </div>
+                    <div className="col-md-10">
+                      <div className="card-body ms-5">
+                        <h6 className="card-title text-truncate">
+                          {elem.name}
+                        </h6>
+                        <h6 className="card-subtitle mb-2 text-muted text-truncate">
+                          {elem.itemTypeAndTierDisplayName}
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
           ))}
-          </div>
         </div>
-        
-          <PaginationCustom
-            itemPerPage={itemPerPage}
-            totalItems={jsonData.length}
-            paginate={paginate}
-            currentPage={currentPage}
-          ></PaginationCustom>
+      </div>
+
+      <PaginationCustom
+        itemPerPage={itemPerPage}
+        totalItems={jsonData.length}
+        paginate={paginate}
+        currentPage={currentPage}
+      ></PaginationCustom>
     </>
   );
 }
 
 export async function getStaticProps() {
-
   const getManifest = await fetch(
     "https://www.bungie.net/Platform/Destiny2/Manifest/",
     {
@@ -118,7 +137,7 @@ export async function getStaticProps() {
   }
 
   //console.log("hash: ", dataArr[236].hash)
-  return { props: { jsonData: dataArr }, revalidate: 10000 };
+  return { props: { jsonData: dataArr }};
 }
 
 /*[
