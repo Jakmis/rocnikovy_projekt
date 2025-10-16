@@ -3,7 +3,7 @@ import Image from "next/image";
 
 
 export default function Item({ data }:any) {
-  console.log(data.itemData)
+  // console.log(data.itemData)
   const response = data.itemData.Response
   const name = response.displayProperties.name
   const icon = response.displayProperties.icon
@@ -11,7 +11,6 @@ export default function Item({ data }:any) {
   const screenshot = response.screenshot
   const tierTypeName = response.inventory.tierTypeName
   const itemTypeDisplayName = response.itemTypeDisplayName
-  
 
 
   return (<>
@@ -37,7 +36,7 @@ export default function Item({ data }:any) {
               </header>
             
               <figure className="mb-4 row">
-                <Image src={`https://www.bungie.net${screenshot}`} className="img-fluid" alt={name} width={500} height={250}></Image>
+                <Image src={screenshot ? `https://www.bungie.net${screenshot}` : ""}  className="img-fluid" alt={name} width={500} height={250}></Image>
               </figure>
 
               <section className="mb-5">
@@ -95,10 +94,10 @@ export async function getStaticPaths() {
         }
       );
       const data = await getManifest.json();
-      console.log("manifest:", data.Response.jsonWorldContentPaths.en);
-    
+      // console.log("manifest:", data.Response.jsonWorldContentPaths.en);
+      const jsonWorldContentPathsEn = data.Response.jsonWorldContentPaths.en
       const jsonWorldContentPaths = await fetch(
-        `https://www.bungie.net${data.Response.jsonWorldContentPaths.en}`,
+        `https://www.bungie.net${jsonWorldContentPathsEn}`,
         {
           method: "GET",
           headers: {
@@ -108,14 +107,14 @@ export async function getStaticPaths() {
       );
     
      const jsonData = await jsonWorldContentPaths.json();
-      console.log("name: ", Object(jsonData.DestinyInventoryItemDefinition['2148295091']))
+      // console.log("name: ", Object(jsonData.DestinyInventoryItemDefinition['2148295091']))
       const itemIds = Object.keys(jsonData.DestinyInventoryItemDefinition);
       const ids = itemIds.map(e => {
         return {params: {
             id: e
         }
       }})
-      console.log(ids)
+      // console.log(ids)
     return {
       paths: ids,
       fallback: false, // can also be true or 'blocking'

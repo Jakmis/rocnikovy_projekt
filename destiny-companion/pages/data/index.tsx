@@ -19,7 +19,7 @@ export default function Data({ jsonData }: any) {
   const indexOfLastItem = currentPage * itemPerPage;
   const indexOfFirstItem = indexOfLastItem - itemPerPage;
   const currentItems = jsonData.slice(indexOfFirstItem, indexOfLastItem);
-
+  const bungieUrl = "https://www.bungie.net";
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   return (
@@ -51,7 +51,7 @@ export default function Data({ jsonData }: any) {
                         src={
                           elem.icon === null
                             ? "https://placehold.co/90?text=?&font=nunito"
-                            : `https://www.bungie.net${elem.icon}`
+                            : `${bungieUrl}${elem.icon}`
                         }
                         width={90}
                         height={90}
@@ -97,9 +97,9 @@ export async function getStaticProps() {
     }
   );
   const data = await getManifest.json();
-
+  const jsonWorldContentPathsEn = data.Response.jsonWorldContentPaths.en
   const f2 = await fetch(
-    `https://www.bungie.net${data.Response.jsonWorldContentPaths.en}`,
+    `https://www.bungie.net${jsonWorldContentPathsEn}`,
     {
       method: "GET",
       headers: {
@@ -111,10 +111,10 @@ export async function getStaticProps() {
   const jsonData = await f2.json();
   //console.log("name: ", Object(jsonData.DestinyInventoryItemDefinition['2148295091']))
 
-  console.log(
-    "icon: ",
-    jsonData.DestinyInventoryItemDefinition["2148295091"].displayProperties.icon
-  );
+  // console.log(
+  //   "icon: ",
+  //   jsonData.DestinyInventoryItemDefinition["2148295091"].displayProperties.icon
+  // );
   const dataArr = [];
   const itemIds = Object.keys(jsonData.DestinyInventoryItemDefinition);
   for (let i = 0; i < 500; i++) {
