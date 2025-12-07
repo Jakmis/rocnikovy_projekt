@@ -18,7 +18,7 @@
     "bungie-api-ts": "^4.21.0",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
-    "next": "^15.5.4",
+    "next": "15.5.7",
     "nprogress": "^0.2.0",
     "react": "18.2.0",
     "react-auth-kit": "^2.7.1",
